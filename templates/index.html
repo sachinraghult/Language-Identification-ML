@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Detection</title>
+    <link rel="stylesheet" type="text/css" href="static/css/form.css">
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="belt">
+          <form class="form" action="{{ url_for('result')}}" method="post">
+            <div class="form-header">
+              <h2>Language Detection using  NLP</h2>
+            </div>
+            <select name='model' id="model">
+              <option value='lr'>Logistic Regression</option>
+              <option value='mn'>Multinomial Naive Bayes</option>
+            </select>
+            <textarea name="input" id="input" cols="50" rows="10" placeholder="Enter text to detect..."></textarea>
+            <button>Send Data</button>
+          </form>
+          <div class="progress-wrapper">
+          </div>
+          <div class="success-wrapper">
+          </div>
+        </div>
+      </div>
+
+</body>
+<script src='static/js/form.js' type="text/javascript"></script>
+
+
+</html>
