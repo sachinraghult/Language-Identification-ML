@@ -1,0 +1,192 @@
+body 
+  background: #222
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  
+  *
+    font-family: 'Raleway'
+  
+  .form-container
+    width: 600px
+    max-width: 100%
+    background: #fff
+    box-shadow: 0px 10px 25px -5px rgba(0,0,0,0.3)
+    border-radius: 5px
+    overflow: hidden
+    background: #222
+    border: 2px solid #FF785A
+  
+    .ion-android-done
+      color: #FF785A
+      font-size: 60px
+      align-self: center
+    
+    &.transitioned-3
+      animation: swoosh 1s 1
+      
+    .belt
+      width: 300%
+      display: flex
+      transition: transform 300ms ease-in-out  
+      
+      &.transitioned-1
+        transform: translateX(-33%)
+      
+      &.transitioned-2
+        transform: translateX(-66%)
+    
+    .progress-wrapper, .success-wrapper,
+    .form
+      width: 50%
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      align-items: center
+      position: relative
+      padding: 20px
+      
+      .form-header
+        // background: #FF785A
+        width: 100%
+        margin: 0 0 20px
+        padding: 10px 0
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 4px 
+        // box-shadow: 10px 10px 13px -10px rgba(0,0,0,0.4)
+        
+        h2
+          color: #FF785A
+        
+      input, textarea
+        display: block
+        width: 95%
+        max-width: 93%
+        margin: 10px 0
+        padding: 10px
+        outline: none
+        border: none
+        border-bottom: 2px solid #FF785A
+        background: #333
+        color: #FF785A
+        caret-color: #FF785A
+        
+        &::placeholder
+          color: transparentize(#FF785A,.2)
+          transition: color .2s
+          
+          font-size: 14px
+        
+        &:focus::placeholder 
+          color: transparent
+        
+      button
+        background: #FF785A
+        border: none
+        color: #222
+        padding: 12px
+        border-radius: 20%
+        align-self: flex-end
+        margin: 10px 10px 10px 0
+        box-shadow: 0px 10px 13px -12px rgba(0,0,0,0.3)
+        outline: none
+        transition: all 300ms ease-in-out
+        cursor: pointer
+        font-size: 14px
+        font-weight: bold
+        text-transform: uppercase
+      
+      h2   
+        color: #fff
+        font-weight: 300
+        
+    .progress-div
+      height: 150px
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      
+      h3
+        color: transparentize(#fff,.1)
+      
+      .progress-outer
+        width: 150px
+        height: 20px
+        background: #fff
+        padding: 5px
+        box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.3)
+        border-radius: 5px
+        
+        .progress-inner
+          background-color: #FF785A
+          border-radius: 5px
+          height: 20px
+          width: 0%
+          
+          &.loading
+            animation: loading 3s 1 300ms forwards 
+               
+    .success
+      display: flex
+      flex-direction: column
+      align-tems: center
+      justify-content: center
+      height: 200px
+      
+      h2
+        color: transparentize(#fff,.1)
+        
+      button
+        align-self: center
+        font-size: 14px
+        
+              
+  button:hover
+    transform: translateY(-3px)
+    box-shadow: 0px 10px 23px -17px rgba(0,0,0,0.3)
+        
+@keyframes swoosh
+  0%
+    transform: translateY(0)
+    opacity: 1
+  
+  10%
+    transform: translateY(10px)
+    opacity: 1
+  
+  50%, 70%
+    transform: translateY(-150%)
+    opacity: 0
+  
+  80%
+    transform: translateY(-50%)
+    opacity: .5
+  
+  100%
+    transform: translateY(0)
+    opacity: 1
+  
+@keyframes loading
+  0%, 30%
+    width: 0%
+  
+  30%
+    width: 10%
+  
+  40%
+    width: 40%
+  
+  50%
+    width: 50%
+  
+  60%, 70%
+    width: 70%
+  
+  100%
+    width: 100%
+          
+      
